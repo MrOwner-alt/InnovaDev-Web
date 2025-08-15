@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexegonal | Build the Future</title>
+    <meta name="description" content="Hexegonal blends creativity and technology to build groundbreaking solutions. Join our team of developers, designers, and innovators!">
+    <link rel="icon" type="image/png" href="asset/favicon.png">
+    <style>
+        /* Brand Colors */
+        :root {
+            --blue: #3f51b5;      /* vivid blue */
+            --purple: #a259e6;    /* vibrant purple */
+            --black: #0a0a0a;
+            --pink: #e040fb;      /* more purple-pink accent */
+            --cyan: #00bcd4;
+        }
+
+        /* Clean Modern Design */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background: var(--black);
+            color: white;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Animated Header */
+        header {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(120deg, var(--blue) 0%, var(--purple) 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            animation: float 3s ease-in-out infinite;
+            color: #fff;
+            text-shadow: 0 2px 16px rgba(62, 81, 181, 0.25), 0 1px 0 #a259e6;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,188,212,0.3);
+        }
+
+        /* Hiring Process */
+        .hiring-steps {
+            display: grid;
+            gap: 1.5rem;
+            counter-reset: step;
+        }
+
+        .step {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            background: var(--pink);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            position: absolute;
+            left: -15px;
+            top: 20px;
+        }
+
+        /* Discord CTA */
+        .discord-cta {
+            text-align: center;
+            background: linear-gradient(120deg, var(--purple) 0%, var(--blue) 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 4rem 0;
+        }
+
+        /* Roles Section */
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .role-card {
+            background: linear-gradient(120deg, rgba(62,81,181,0.10) 0%, rgba(162,89,230,0.10) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .role-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .role-card h3,
+        .payment-section h2 {
+            color: var(--pink);
+        }
+
+        /* Payment Section */
+        .payment-section {
+            background: linear-gradient(120deg, rgba(162,89,230,0.10) 0%, rgba(62,81,181,0.10) 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        /* Icon Styles */
+        .icon {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 8px;
+            filter: invert(1) drop-shadow(0 0 2px var(--pink));
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .staff-section {
+            margin-top: 15px;
+        }
+
+        .staff-heading {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .staff-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            filter: invert(1) drop-shadow(0 0 2px var(--pink));
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            header {
+                padding: 4rem 1rem;
+            }
+            .section {
+                padding: 2.5rem 1rem;
+            }
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            .about-image {
+                max-height: 220px;
+                object-fit: cover;
+            }
+            .roles-grid {
+                grid-template-columns: 1fr;
+            }
+            .discord-cta {
+                padding: 1.5rem;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hexegonal</h1>
+        <p>Where Innovation Meets Excellence</p>
+    </header>
+
+<!-- About Section -->
+<section class="section" id="about" aria-labelledby="about-heading">
+    <div class="about-grid">
+        <div>
+            <h2 id="about-heading">Who We Are</h2>
+            <p>At Hexegonal, we blend creativity with technology to build groundbreaking solutions. Our Games Hub division specializes in creating immersive gaming experiences that push boundaries.</p>
+            
+            <h3>Contact Us</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li class="contact-item">
+                    <img src="asset/controllericon.png" class="icon" alt="Discord Icon">
+                    <span>Discord: <a href="https://discord.gg/HmHBfKstTc" style="color: var(--pink);" rel="noopener noreferrer" target="_blank">https://discord.gg/HmHBfKstTc</a></span>
+                </li>
+                <li class="contact-item">
+                    <img src="asset/emailicon.png" class="icon" alt="Email Icon">
+                    <span>Email: <a href="mailto:hexegonal365@gmail.com" style="color: var(--pink);">hexegonal365@gmail.com</a></span>
+                </li>
+                <li class="staff-section">
+                    <div class="staff-heading">
+                        <img src="asset/contactstaff.png" class="staff-icon" alt="Staff Icon">
+                        <span>Contact Our Staff:</span>
+                    </div>
+                    <ul style="list-style: none; padding-left: 20px;">
+                        <li class="contact-item">
+                            <img src="asset/stafficon.png" class="icon" alt="Staff Member Icon">
+                            <a href="https://discord.com/users/@developer02560" style="color: var(--pink);" rel="noopener noreferrer" target="_blank">Developer02560</a>
+                        </li>
+                        <li class="contact-item">
+                            <img src="asset/stafficon.png" class="icon" alt="Staff Member Icon">
+                            <a href="https://discord.com/users/@atom20003113" style="color: var(--pink);" rel="noopener noreferrer" target="_blank">Atom20003113</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&w=800" 
+             alt="A diverse development team collaborating in a modern workspace" 
+             class="about-image">
+    </div>
+</section>
+
+<!-- Available Roles Section -->
+<section class="section" id="roles" aria-labelledby="roles-heading">
+    <h2 id="roles-heading">Available Roles</h2>
+    <div class="roles-grid">
+        <div class="role-card">
+            <h3>Programmers</h3>
+            <p>We need programmers of all types: front-end, back-end, full-stack, game developers, and more. If you can code, we want you!</p>
+        </div>
+        <div class="role-card">
+            <h3>Designers</h3>
+            <p>UI/UX designers, graphic artists, and game designers are welcome to join our team and bring creative visions to life.</p>
+        </div>
+        <div class="role-card">
+            <h3>Community Managers</h3>
+            <p>Help us build and manage our community, engage with users, and create a welcoming environment for everyone.</p>
+        </div>
+        <div class="role-card">
+            <h3>QA Testers</h3>
+            <p>Ensure our products are bug-free and deliver the best user experience by joining our quality assurance team.</p>
+        </div>
+        <div class="role-card">
+            <h3>Project Managers</h3>
+            <p>Organize and oversee projects to ensure they are delivered on time and meet our high standards.</p>
+        </div>
+        <div class="role-card">
+            <h3>Marketing Specialists</h3>
+            <p>Help us grow our brand and reach new audiences through creative marketing strategies.</p>
+        </div>
+    </div>
+</section>
+
+<!-- How We Pay Section -->
+<section class="section" id="payment" aria-labelledby="payment-heading">
+    <div class="payment-section">
+        <h2 id="payment-heading">How We Recognize and Reward Contributions</h2>
+        <p>At Hexegonal, we believe in supporting our team members in unique ways. While we don't offer monetary compensation, we provide:</p>
+        <ul>
+            <li>
+                <img src="asset/rocket.png" class="icon" alt="Rocket Icon">
+                <strong>Promotion for Your Products/Sites:</strong> We'll help promote your personal projects, websites, or services to our growing community.
+            </li>
+            <li>
+                <img src="asset/star.png" class="icon" alt="Star Icon">
+                <strong>Credit for Your Work:</strong> You'll receive full credit for your contributions, ensuring your work is recognized and celebrated.
+            </li>
+        </ul>
+        <p>Join us to grow your portfolio, gain exposure, and collaborate with a passionate team!</p>
+    </div>
+</section>
+
+<!-- Hiring Process -->
+<section class="section" id="hiring" aria-labelledby="hiring-heading">
+    <h2 id="hiring-heading">Join Our Team</h2>
+    <div class="hiring-steps">
+        <div class="step">
+            <h3>1. Submit Application</h3>
+            <p>Send your portfolio, previous projects, or work experience through our Discord server with the role title in the subject.</p>
+        </div>
+        
+        <div class="step">
+            <h3>2. Skill Assessment</h3>
+            <p>Complete a role-specific assessment to demonstrate your expertise:</p>
+            <ul>
+                <li><strong>Developers:</strong> Build a small project or solve a coding challenge (72-hour deadline).</li>
+                <li><strong>Designers:</strong> Create sample assets or redesign an existing interface.</li>
+                <li><strong>Community Managers:</strong> Respond to a simulated community scenario or draft a community engagement plan.</li>
+                <li><strong>QA Testers:</strong> Identify and document bugs in a provided sample project.</li>
+                <li><strong>Project Managers:</strong> Develop a project timeline or risk management plan for a hypothetical scenario.</li>
+                <li><strong>Marketing Specialists:</strong> Create a marketing strategy or campaign proposal for a target audience.</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>3. Collaboration & Onboarding</h3>
+            <p>If selected, you'll join our team and collaborate on exciting projects. We'll ensure your contributions are credited and provide opportunities to showcase your work.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Discord CTA -->
+<div class="section">
+    <div class="discord-cta" aria-labelledby="discord-cta-heading">
+        <h2 id="discord-cta-heading">Connect With Us</h2>
+        <p>Join our growing community for updates, support, and collaboration!</p>
+        <a href="https://discord.gg/HmHBfKstTc" 
+           style="display: inline-block; 
+                  background: white; 
+                  color: var(--black); 
+                  padding: 1rem 2rem; 
+                  border-radius: 50px; 
+                  text-decoration: none; 
+                  margin-top: 1rem;"
+           rel="noopener noreferrer" target="_blank">
+            Join Discord Server
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
